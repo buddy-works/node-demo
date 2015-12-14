@@ -40,4 +40,24 @@ describe('Demonode', function(){
 
     });
 
+    describe('.sub()', function(){
+
+        it('should be a function', function(){
+            expect(demonode.sub).to.be.a('function');
+        });
+
+        it('should sub values', function(){
+            expect(demonode.sub(3, 2)).to.equal(1);
+        });
+
+        it('should throw error when v1 is not a number', function(){
+            expect(demonode.sub.bind(demonode, 'test', 2)).to.throw('v1 is not a number');
+        });
+
+        it('should throw error when v2 is not a number', function(){
+            expect(demonode.sub.bind(demonode, 3, false)).to.throw('v2 is not a number');
+        });
+
+    });
+
 });
