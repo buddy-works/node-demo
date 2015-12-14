@@ -1,0 +1,21 @@
+{
+  "name": "demo-node",
+  "version": "1.0.0",
+  "author": "Buddy Works",
+  "description": "Buddy Works demo project",
+  "engines": {
+    "node": ">=0.10"
+  },
+  "main": "./lib/demonode",
+  "scripts": {
+    "lint": "jshint lib test",
+    "test": "mocha --reporter spec --timeout 4000",
+    "prepare": "npm test && npm run lint"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "jshint": "^2.9.1-rc1",
+    "mocha": "^2.3.4"
+  }
+}
