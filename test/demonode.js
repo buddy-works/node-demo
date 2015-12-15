@@ -14,48 +14,68 @@
 'use strict';
 var expect = require('chai').expect;
 var demonode = require('../lib/demonode');
-describe('Demonode', function(){
+describe('Demonode', function () {
 
-    it('should be an object', function(){
-       expect(demonode).to.be.an('object');
+    it('should be an object', function () {
+        expect(demonode).to.be.an('object');
     });
 
-    describe('.add()', function(){
+    describe('.add()', function () {
 
-        it('should be a function', function(){
-           expect(demonode.add).to.be.a('function');
+        it('should be a function', function () {
+            expect(demonode.add).to.be.a('function');
         });
 
-        it('should add values', function(){
-           expect(demonode.add(1, 2)).to.equal(3);
+        it('should add values', function () {
+            expect(demonode.add(1, 2)).to.equal(3);
         });
 
-        it('should throw error when v1 is not a number', function(){
-           expect(demonode.add.bind(demonode, 'test', 2)).to.throw('v1 is not a number');
+        it('should throw error when v1 is not a number', function () {
+            expect(demonode.add.bind(demonode, 'test', 2)).to.throw('v1 is not a number');
         });
 
-        it('should throw error when v2 is not a number', function(){
+        it('should throw error when v2 is not a number', function () {
             expect(demonode.add.bind(demonode, 1, false)).to.throw('v2 is not a number');
         });
 
     });
 
-    describe('.sub()', function(){
+    describe('.sub()', function () {
 
-        it('should be a function', function(){
+        it('should be a function', function () {
             expect(demonode.sub).to.be.a('function');
         });
 
-        it('should sub values', function(){
+        it('should sub values', function () {
             expect(demonode.sub(3, 2)).to.equal(1);
         });
 
-        it('should throw error when v1 is not a number', function(){
+        it('should throw error when v1 is not a number', function () {
             expect(demonode.sub.bind(demonode, 'test', 2)).to.throw('v1 is not a number');
         });
 
-        it('should throw error when v2 is not a number', function(){
+        it('should throw error when v2 is not a number', function () {
             expect(demonode.sub.bind(demonode, 3, false)).to.throw('v2 is not a number');
+        });
+
+    });
+
+    describe('.mul()', function () {
+
+        it('should be a function', function () {
+            expect(demonode.mul).to.be.a('function');
+        });
+
+        it('should mul values', function () {
+            expect(demonode.mul(3, 2)).to.equal(6);
+        });
+
+        it('should throw error when v1 is not a number', function () {
+            expect(demonode.mul.bind(demonode, 'test', 2)).to.throw('v1 is not a number');
+        });
+
+        it('should throw error when v2 is not a number', function () {
+            expect(demonode.mul.bind(demonode, 3, false)).to.throw('v2 is not a number');
         });
 
     });
